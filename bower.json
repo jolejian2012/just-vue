@@ -1,0 +1,24 @@
+{
+  "name": "just-vue",
+  "description": "A quick starter for Vue and Webpack.",
+  "main": "index.js",
+  "authors": [
+    "JustClear"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "webpack",
+    "starter"
+  ],
+  "homepage": "https://github.com/JustClear/just-vue",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
