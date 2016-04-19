@@ -1,5 +1,5 @@
 <template>
-  <div class="item-view"></div>
+	<div class="item-view"></div>
 </template>
 
 <script>
@@ -7,26 +7,26 @@ import Item from './Item.vue';
 
 export default {
 
-  name: 'ItemView',
+	name: 'ItemView',
 
-  components: {
-    Item
-  }
+	components: {
+		Item
+	},
 
-  props: {
-    text: String
-  }
+	props: {
+		text: String
+	},
 
-  computed: {
-    hello() {
-      return 'Item View.';
-    }
-  }
+	computed: {
+		hello() {
+			return 'Item View.';
+		}
+	}
 }
 </script>
 
-<style lang="scss">
+<style lang="sass">
 .item-view {
-  // font-size: inherit;
+	// font-size: inherit;
 }
 </style>

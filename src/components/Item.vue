@@ -1,26 +1,26 @@
 <template>
-  <div class="item"></div>
+	<div class="item"></div>
 </template>
 
 <script>
 export default {
 
-  name: 'Item',
+	name: 'Item',
 
-  props: {
-    text: String
-  }
+	props: {
+		text: String
+	},
 
-  computed: {
-    hello() {
-      return 'Item.';
-    }
-  }
+	computed: {
+		hello() {
+				return 'Item.';
+		}
+	}
 }
 </script>
 
-<style lang="scss">
+<style lang="sass">
 .item {
-  // font-size: inherit;
+	// font-size: inherit;
 }
 </style>

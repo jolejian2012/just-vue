@@ -1,14 +1,14 @@
 <template>
-  <div class="wrapper">
-    <h1>Just Vue.</h1>
-  </div>
+	<div class="wrapper">
+		<h1>Just Vue.</h1>
+	</div>
 </template>
 
-<style lang="scss">
+<style lang="sass">
 .wrapper {
 
-  h1 {
-    font-size: 2em;
-  }
+	h1 {
+		font-size: 2em;
+	}
 }
 </style>
