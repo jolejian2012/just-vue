@@ -1,0 +1,21 @@
+{
+  "name": "just-vue",
+  "version": "1.0.0",
+  "description": "A quick starter for Vue and Webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justclear/just-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "webpack",
+    "starter"
+  ],
+  "author": "JustClear",
+  "license": "MIT",
+  "homepage": "https://github.com/justclear/just-vue#readme",
+}
