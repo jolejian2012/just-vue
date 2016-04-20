@@ -72,19 +72,24 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// install router
+
+
+	// components
+	// JustClear updated at 2016-04-20
+
 	_vue2.default.use(_vueRouter2.default);
 
-	// routing
+	// instantiate routing
 	var router = new _vueRouter2.default();
 
 	router.map({
-	  '/item/:id': {
-	    component: _ItemView2.default
-	  }
+	    '/item/:id': {
+	        component: _ItemView2.default
+	    }
 	});
 
 	router.redirect({
-	  '*': '/item/1'
+	    '*': '/item/1'
 	});
 
 	router.start(_App2.default, '#just-vue');
@@ -13175,7 +13180,7 @@
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"wrapper\">\n\t<h1>Just Vue.</h1>\n</div>\n";
+	module.exports = "\n<div class=\"wrapper\">\n\t<h1>Just Vue.</h1>\n\t<router-view></router-view>\n</div>\n";
 
 /***/ },
 /* 11 */
@@ -13270,25 +13275,35 @@
 			Item: _Item2.default
 		},
 
-		props: {
-			text: String
+		data: function data() {
+			return {
+				item: {
+					text: 'This is item text.'
+				}
+			};
 		},
 
+
 		computed: {
-			hello: function hello() {
-				return 'Item View.';
+			hasText: function hasText() {
+				return this.item.hasOwnProperty('text');
 			}
 		}
 	};
 	// </script>
+	// <!-- JustClear updated at 2016-04-20 -->
 	//
 	// <style lang="sass">
 	// .item-view {
 	// 	// font-size: inherit;
 	// }
 	// </style>
+	//
 	// <template>
-	// 	<div class="item-view"></div>
+	// 	<div class="item-view">
+	// 		<item :item="item"></item>
+	// 		<p class="item-text" v-if="hasText" v-html="item.text"></p>
+	// 	</div>
 	// </template>
 	//
 	// <script>
@@ -13371,8 +13386,18 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	// <!-- JustClear updated at 2016-04-20 -->
+	//
+	// <style lang="sass">
+	// .item {
+	// 	// font-size: inherit;
+	// }
+	// </style>
+	//
 	// <template>
-	// 	<div class="item"></div>
+	// 	<div class="item">
+	// 		<p>{{ hello }}</p>
+	// 	</div>
 	// </template>
 	//
 	// <script>
@@ -13386,29 +13411,23 @@
 
 		computed: {
 			hello: function hello() {
-				return 'Item.';
+				return 'This is item.';
 			}
 		}
 	};
 	// </script>
-	//
-	// <style lang="sass">
-	// .item {
-	// 	// font-size: inherit;
-	// }
-	// </style>
 
 /***/ },
 /* 19 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"item\"></div>\n";
+	module.exports = "\n<div class=\"item\">\n\t<p>{{ hello }}</p>\n</div>\n";
 
 /***/ },
 /* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"item-view\"></div>\n";
+	module.exports = "\n<div class=\"item-view\">\n\t<item :item=\"item\"></item>\n\t<p class=\"item-text\" v-if=\"hasText\" v-html=\"item.text\"></p>\n</div>\n";
 
 /***/ }
 /******/ ]);
