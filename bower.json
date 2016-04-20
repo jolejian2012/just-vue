@@ -12,8 +12,9 @@
     "starter"
   ],
   "homepage": "https://github.com/JustClear/just-vue",
-  "moduleType": [],
-  "private": true,
+  "moduleType": [
+    "es6"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
