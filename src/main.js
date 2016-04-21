@@ -2,6 +2,7 @@
 
 import Vue from 'vue';
 import Router from 'vue-router';
+import RouterMapper from './routers';
 
 // components
 import App from './components/App.vue';
@@ -12,12 +13,7 @@ Vue.use(Router);
 
 // instantiate routing
 let router = new Router();
-
-router.map({
-    '/item/:id': {
-        component: ItemView
-    }
-});
+router.map(RouterMapper);
 
 router.redirect({
     '*': '/item/1'
