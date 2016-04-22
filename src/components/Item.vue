@@ -1,10 +1,4 @@
-<!-- JustClear updated at 2016-04-20 -->
-
-<style lang="sass">
-.item {
-	// font-size: inherit;
-}
-</style>
+<!-- JustClear updated at 2016-04-22 -->
 
 <template>
 	<div class="item">
@@ -13,12 +7,14 @@
 </template>
 
 <script>
+import store from '../store';
+
 export default {
 
 	name: 'Item',
 
-	props: {
-		text: String
+	ready() {
+		store.fetchData();
 	},
 
 	computed: {
@@ -28,3 +24,9 @@ export default {
 	}
 }
 </script>
+
+<style lang="sass">
+.item {
+	// font-size: inherit;
+}
+</style>

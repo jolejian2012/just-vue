@@ -1,10 +1,4 @@
-<!-- JustClear updated at 2016-04-20 -->
-
-<style lang="sass">
-.item-view {
-	// font-size: inherit;
-}
-</style>
+<!-- JustClear updated at 2016-04-22 -->
 
 <template>
 	<div class="item-view">
@@ -39,3 +33,9 @@ export default {
 	}
 }
 </script>
+
+<style lang="sass">
+.item-view {
+	// font-size: inherit;
+}
+</style>

@@ -1,4 +1,11 @@
-<!-- JustClear updated at 2016-04-20 -->
+<!-- JustClear updated at 2016-04-22 -->
+
+<template>
+	<div class="wrapper">
+		<h1>Just Vue.</h1>
+		<router-view></router-view>
+	</div>
+</template>
 
 <style lang="sass">
 .wrapper {
@@ -8,10 +15,3 @@
 	}
 }
 </style>
-
-<template>
-	<div class="wrapper">
-		<h1>Just Vue.</h1>
-		<router-view></router-view>
-	</div>
-</template>
