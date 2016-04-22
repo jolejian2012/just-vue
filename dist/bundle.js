@@ -12835,22 +12835,27 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// index.js
-	// JustClear updated at 2016-04-21
+
+	var _ItemView = __webpack_require__(12);
+
+	var _ItemView2 = _interopRequireDefault(_ItemView);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// routers
 	exports.default = {
 	    '/item/:id': {
-	        component: ItemView
+	        component: _ItemView2.default
 	    }
-	};
+	}; // index.js
+	// JustClear updated at 2016-04-22
 
 /***/ },
 /* 6 */
@@ -13309,13 +13314,13 @@
 		}
 	};
 	// </script>
-	// <!-- JustClear updated at 2016-04-20 -->
 	//
 	// <style lang="sass">
 	// .item-view {
 	// 	// font-size: inherit;
 	// }
 	// </style>
+	// <!-- JustClear updated at 2016-04-22 -->
 	//
 	// <template>
 	// 	<div class="item-view">
@@ -13397,35 +13402,28 @@
 
 /***/ },
 /* 19 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	// <!-- JustClear updated at 2016-04-20 -->
-	//
-	// <style lang="sass">
-	// .item {
-	// 	// font-size: inherit;
-	// }
-	// </style>
-	//
-	// <template>
-	// 	<div class="item">
-	// 		<p>{{ hello }}</p>
-	// 	</div>
-	// </template>
-	//
-	// <script>
+
+	var _store = __webpack_require__(22);
+
+	var _store2 = _interopRequireDefault(_store);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	exports.default = {
 
 		name: 'Item',
 
-		props: {
-			text: String
+		ready: function ready() {
+			_store2.default.fetchData();
 		},
+
 
 		computed: {
 			hello: function hello() {
@@ -13434,6 +13432,21 @@
 		}
 	};
 	// </script>
+	//
+	// <style lang="sass">
+	// .item {
+	// 	// font-size: inherit;
+	// }
+	// </style>
+	// <!-- JustClear updated at 2016-04-22 -->
+	//
+	// <template>
+	// 	<div class="item">
+	// 		<p>{{ hello }}</p>
+	// 	</div>
+	// </template>
+	//
+	// <script>
 
 /***/ },
 /* 20 */
@@ -13446,6 +13459,35 @@
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"item-view\">\n\t<item :item=\"item\"></item>\n\t<p class=\"item-text\" v-if=\"hasText\" v-html=\"item.text\"></p>\n</div>\n";
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// index.js
+	// JustClear updated at 2016-04-22
+
+	var API = " https://hacker-news.firebaseio.com/v0/topstories.json";
+	var store = {};
+
+	exports.default = store;
+
+
+	store.fetchData = function () {
+	    fetch(API).then(function (respone) {
+	        return respone.json();
+	    }).then(function (data) {
+	        console.log(data);
+	        return data;
+	    }).catch(function (error) {
+	        console.log(error);
+	    });
+	};
 
 /***/ }
 /******/ ]);
