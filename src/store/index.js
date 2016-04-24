@@ -1,8 +1,10 @@
 // index.js
 // JustClear updated at 2016-04-22
 
+import { EventEmitter } from 'events';
+
 const API = ` https://hacker-news.firebaseio.com/v0/topstories.json`;
-const store = {};
+const store = new EventEmitter();
 
 export default store;
 
