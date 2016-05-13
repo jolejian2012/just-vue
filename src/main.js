@@ -2,21 +2,16 @@
 
 import Vue from 'vue';
 import Router from 'vue-router';
-import RouterMapper from './routers';
+import Routers from './routers';
 
 // components
-import App from './components/App.vue';
-import ItemView from './components/ItemView.vue';
+import App from './App.vue';
 
 // install router
 Vue.use(Router);
 
 // instantiate routing
 let router = new Router();
-router.map(RouterMapper);
-
-router.redirect({
-    '*': '/item/1'
-})
+Routers(router);
 
 router.start(App, '#just-vue');

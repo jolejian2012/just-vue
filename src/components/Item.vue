@@ -1,26 +1,20 @@
-<!-- JustClear updated at 2016-04-22 -->
+<!-- JustClear updated at 2016-05-13 -->
 
 <template>
 	<div class="item">
 		<p>{{ hello }}</p>
+		<p>{{ data }}</p>
 	</div>
 </template>
 
 <script>
-import store from '../store';
-
 export default {
-
 	name: 'Item',
-
-	ready() {
-		store.fetchData();
-	},
-
-	computed: {
-		hello() {
-			return 'This is item.';
-		}
+	props: ['data'],
+	data() {
+		return {
+			hello: 'Hello World.'
+		};
 	}
 }
 </script>

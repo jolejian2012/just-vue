@@ -1,11 +1,19 @@
 // index.js
-// JustClear updated at 2016-04-22
+// JustClear updated at 2016-05-13
 
-import ItemView from '../components/ItemView.vue';
+import HomeView from '../views/home/HomeView.vue';
+import NotFound from '../views/NotFound.vue';
 
-// routers
-export default {
-    '/item/:id': {
-        component: ItemView
-    }
+export default (router) => {
+    router.map({
+        '/': {
+            component: HomeView
+        },
+        '/NotFound': {
+            component: NotFound
+        }
+    });
+    router.redirect({
+        '*': '/NotFound'
+    })
 }
