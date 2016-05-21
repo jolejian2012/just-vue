@@ -1,5 +1,16 @@
-var webpack = require('webpack');
-var path = require('path');
+var webpack = require('webpack'),
+    path = require('path'),
+    paths = {
+        root: '/',
+        source: {
+            root: './src/'
+        },
+        dist: {
+            root: './dist/',
+            script: './dist/js/',
+            style: './dist/css/'
+        }
+    };
 
 module.exports = {
     entry: ['./src/main.js'],
