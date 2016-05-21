@@ -8,7 +8,7 @@ config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 var app = new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
-    hot:true,
+    hot: true,
     historyApiFallback: true
 });
 app.listen(8090);
