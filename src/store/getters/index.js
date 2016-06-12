@@ -1,5 +1,3 @@
 // getters/index.js
 
-export function getCurrentCount(state) {
-    return state.count;
-};
+export const getCurrentCount = (state) => state.count;
