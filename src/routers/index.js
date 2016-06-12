@@ -1,5 +1,4 @@
-// index.js
-// JustClear updated at 2016-05-13
+// routers/index.js
 
 import HomeView from '../views/home/HomeView.vue';
 import NotFound from '../views/NotFound.vue';

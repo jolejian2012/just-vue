@@ -2,20 +2,20 @@
 
 <template>
 	<div class="item">
-		<p>{{ hello }}</p>
-		<p>{{ data }}</p>
+		<component-a></component-a>
+		<component-b></component-b>
 	</div>
 </template>
 
 <script>
+import componentA from './componentA';
+import componentB from './componentB';
 export default {
 	name: 'Item',
-	props: ['data'],
-	data() {
-		return {
-			hello: 'Hello World.'
-		};
-	}
+	components: {
+		componentA,
+		componentB
+	},
 }
 </script>
 
