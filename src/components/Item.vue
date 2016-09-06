@@ -1,5 +1,3 @@
-<!-- JustClear updated at 2016-05-13 -->
-
 <template>
 	<div class="item">
 		<component-a></component-a>
@@ -18,9 +16,3 @@ export default {
 	},
 }
 </script>
-
-<style lang="sass">
-.item {
-	// font-size: inherit;
-}
-</style>

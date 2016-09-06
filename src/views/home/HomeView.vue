@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <img src="../../images/hello.png" alt="">
         <item :data="data"></item>
     </div>
 </template>

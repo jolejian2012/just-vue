@@ -1,5 +1,3 @@
-<!-- JustClear updated at 2016-05-14 -->
-
 <template>
 	<div class="loading">
         <p class="loading-text">

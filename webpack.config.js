@@ -1,5 +1,5 @@
 var webpack = require('webpack'),
-    path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     paths = {
         root: '/',
         source: {
@@ -11,12 +11,13 @@ var webpack = require('webpack'),
             style: './dist/css/'
         }
     };
-
-module.exports = {
-    entry: ['./src/main.js'],
+var Configrue = {
+    entry: {
+        app: ['./src/app.js'],
+    },
     output: {
-        path: path.resolve('./dist'),
-        filename: 'bundle.js',
+        path: paths.dist.root,
+        filename: 'js/[name].js',
         publicPath: '/dist/'
     },
     resolve: {
@@ -27,22 +28,39 @@ module.exports = {
         noParse: /es6-promise\.js$/,
         loaders: [
             {
+                test: /\.vue$/,
+                loaders: ['vue']
+            },
+            {
                 test: /\.js$/,
                 // for normal use cases only node_modules is needed.
                 loaders: ['babel'],
                 exclude: [/node_modules/]
             },
             {
-                test: /\.vue$/,
-                loaders: ['vue']
-            }
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style', 'css!sass'),
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style!css'),
+            },
+            {
+                test: /\.(gif|jpg|jpeg|png)$/,
+                loader: 'url?limit=5120&name=images/[name].[ext]',
+            },
         ]
-    },
-    vue: {
-        autoprefixer: false
     },
     babel: {
         presets: ['es2015']
     },
-    plugins: []
+    plugins: [
+        new ExtractTextPlugin('css/style.css'),
+    ],
+};
+
+if (process.env.NODE_ENV === 'production') {
+    Configrue.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
+
+module.exports = Configrue;

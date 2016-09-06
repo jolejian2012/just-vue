@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --inline --hot",
-    "dev": "webpack --watch"
+    "watch": "NODE_ENV=development webpack --watch",
+    "dev": "NODE_ENV=development webpack",
+    "prod": "NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",

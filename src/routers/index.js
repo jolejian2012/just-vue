@@ -1,18 +1,16 @@
-// routers/index.js
-
 import HomeView from '../views/home/HomeView.vue';
-import NotFound from '../views/NotFound.vue';
+import NotFound from '../views/404.vue';
 
 export default (router) => {
     router.map({
         '/': {
             component: HomeView
         },
-        '/NotFound': {
+        '/404': {
             component: NotFound
         }
     });
     router.redirect({
-        '*': '/NotFound'
+        '*': '/404',
     })
 }
