@@ -2,6 +2,16 @@
 
 A quick starter for Vue and Webpack.
 
+## Usage
+
+```sh
+$ npm run dev
+
+$ npm start
+
+$ npm run prod
+```
+
 ## webpack.config.js
 
 ```js
