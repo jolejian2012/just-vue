@@ -18,7 +18,7 @@ var Configrue = {
     output: {
         path: paths.dist.root,
         filename: 'js/[name].js',
-        publicPath: '/dist/'
+        publicPath: 'http://localhost:8080/dist/'
     },
     resolve: {
         extensions: ['', '.js', '.vue', '.css']
